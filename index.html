@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💼 Book or No Book (Web Version)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>💼 Book or No Book</header>
+
+  <div id="game">
+    <div id="left-sidebar" class="sidebar"></div>
+    <div id="cases"></div>
+    <div id="right-sidebar" class="sidebar"></div>
+  </div>
+
+  <div id="player-case">Drag your case here to keep it!</div>
+  <div id="banker-offer"></div>
+  <div id="actions"></div>
+
+  <!-- Custom modal for showing case content -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal">&times;</span>
+      <img id="modal-img" src="" alt="Prize image">
+      <p id="modal-text"></p>
+    </div>
+  </div>
+
+  <script src="Game.js"></script>
+</body>
+</html>

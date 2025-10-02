@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url("img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  font-size: 2em;
+  padding: 20px;
+  background: rgba(255, 204, 0, 0.9);
+  width: 100%;
+  text-align: center;
+}
+
+#game {
+  display: flex;
+  margin: 20px;
+}
+
+#cases {
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  grid-gap: 10px;
+  margin: 0 20px;
+}
+
+.case {
+  width: 90px;
+  height: 90px;
+  background-image: url("img/books.png");
+  background-size: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.case.opened {
+  background-image: url("img/opened.jpg");
+  cursor: default;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 1em;
+  background: rgba(255,255,255,0.9);   /* white background with slight transparency */
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 140px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.value {
+  margin: 5px;
+  padding: 8px;
+  font-weight: bold;
+  color: green;
+  background: white;                   /* white individual boxes */
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.value.opened {
+  color: gray;
+  background: #f5f5f5;
+  text-decoration: line-through;
+}
+
+
+#player-case {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #d48806;
+  background: rgba(255,255,255,0.9);  /* white box */
+}
+#player-case-slot {
+  border: 2px dashed #ccc;
+  background: rgba(255,255,255,0.9);  /* white box */
+  border-radius: 12px;
+  width: 220px;
+  height: 120px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: border 0.3s, background 0.3s;
+}
+
+#player-case-slot.drag-over {
+  border-color: green;
+  background: rgba(255,255,255,1);
+}
+
+#banker-offer {
+  margin-top: 20px;
+  padding: 15px;
+  background: #ffe58f;
+  border: 2px solid #faad14;
+  border-radius: 6px;
+  font-weight: bold;
+  display: none;
+}
+
+#actions button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+#modal-img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+#close-modal {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: red;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
