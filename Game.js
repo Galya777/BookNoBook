@@ -192,6 +192,7 @@ function openCase(index, el) {
   modalText.textContent = "This case contained: $" + val;
   modal.style.display = "block";
   isModalOpen = true;
+  modalActions.innerHTML = "";
 
   markValue(val);
   openedCases++;
@@ -479,6 +480,9 @@ function performSwap(newCaseIndex) {
 
   // Update player case index (no value swap to reflect actual case swap)
   playerCaseIndex = newCaseIndex;
+
+  // Update the player case display text
+  document.getElementById("player-case").textContent = "Your Case: Case " + (newCaseIndex + 1);
 
   modalText.innerHTML = `Swap Completed<br><small>Your new case is Case ${newCaseIndex + 1}</small>`;
   modalActions.innerHTML = '';
